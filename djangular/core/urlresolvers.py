@@ -45,7 +45,7 @@ def urls_by_namespace(namespace, urlconf=None, args=None, kwargs=None, prefix=No
             extra, resolver = resolver.namespace_dict[ns]
             resolved_path.append(ns)
             ns_pattern = ns_pattern + extra
-        except KeyError, key:
+        except KeyError as key:
             if resolved_path:
                 raise NoReverseMatch("%s is not a registered namespace inside '%s'" %
                     (key, ':'.join(resolved_path)))
